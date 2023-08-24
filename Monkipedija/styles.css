@@ -1,0 +1,777 @@
+/*-----------------------------skupno vsem html stranem..............................................*/
+
+* {
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(32, 33, 36);
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.navbar {
+  top: 0;
+  position: fixed;
+  width: 82%; /* ker padding doda width je zato 82% (100-12-6)... definiramo width ker v jqueryju dodamo position:fixed in potem se spremeni širina nav bara*/
+  height: 65px;
+  background: rgb(32, 33, 36);
+  padding-left: 12%;
+  padding-right: 6%;
+  border-bottom: 3px solid #333;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter";
+  font-size: 17px;
+}
+
+.slika2 {
+  /* logo*/
+  height: 50px;
+  width: auto;
+}
+
+.navbar .items {
+  /* odstavki v navbaru */
+  color: rgb(232, 234, 237);
+  display: flex;
+  justify-content: end;
+  gap: 25px;
+  flex: 1;
+}
+
+.prijava {
+  /* divsion za gumb prijava v navbaru */
+  display: flex;
+  justify-content: end;
+  flex: 0.1;
+  margin-left: 10px;
+}
+
+.button1 {
+  /* gumb za prijavo */
+  border: none;
+  background-color: rgb(211, 219, 231);
+  font-family: "Inter";
+  font-size: 17px;
+  padding: 8px 16px;
+}
+
+.button1:hover {
+  cursor: pointer;
+}
+
+.button0 {
+  /*gumb za galerijo v navbaru */
+  border: none;
+  background: rgb(32, 33, 36);
+  font-family: "Inter";
+  font-size: 17px;
+  color: rgb(232, 234, 237);
+}
+.button0:hover {
+  /*kadar hoveraš gumb za galerijo v navbaru*/
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button2 {
+  border: none;
+  font-family: "Inter";
+  background-color: rgb(211, 219, 231);
+  font-size: 13px;
+  padding: 3px 6px;
+}
+
+.button2:hover {
+  cursor: pointer;
+}
+
+.galerija {
+  /*galerija dropdown menu prikaz: slike, videi */
+  top: 0;
+  z-index: 3;
+  margin-top: 65px;
+  padding-left: 15px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  position: fixed;
+  font-family: "Inter";
+  font-size: 17px;
+  border-right: 3px solid #333;
+  border-left: 3px solid #333;
+  border-bottom: 3px solid #333;
+  width: 60px;
+  margin-left: 79%;
+  background: rgb(32, 33, 36);
+  display: none;
+}
+
+.galerija.open {
+  /* uporabimo kadar prikažemo dropdown menu ko kliknemo na galerija */
+  display: block;
+}
+
+.login {
+  /*dropdown login ko klikneš na gumb prijava */
+  top: 0;
+  position: fixed;
+  width: 150px;
+  border-right: 3px solid #333;
+  border-left: 3px solid #333;
+  border-bottom: 3px solid #333;
+  margin-top: 65px;
+  margin-left: 87%;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-family: "Inter";
+  color: rgb(210, 210, 210);
+  background: rgb(32, 33, 36);
+  display: none;
+}
+
+.login.odprt {
+  /*uporabimo kadar želimo prikazat prijavo */
+  display: block;
+}
+
+a:link {
+  color: rgb(232, 234, 237);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(232, 234, 237);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(232, 234, 237);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: rgb(232, 234, 237);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* opozorilo o napačnih podatkih pri prijavi*/
+.info8 {
+  font-size: 13px;
+  color: red;
+}
+
+/*-----------------------------index.html..............................................*/
+
+.title2 {
+  /* naslov predstavitev vsake posamezne spletne strani */
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+}
+
+.slika1 {
+  /* slika skupine goril*/
+  width: 100%;
+  padding-top: 78px;
+  min-width: 1000px;
+}
+
+.slika5 {
+  width: 100%;
+  min-width: 1000px;
+  height: 500px;
+}
+
+.info {
+  /*division za predstavitev navbar odstavkov */
+  padding-top: 65px;
+  padding-bottom: 70px;
+  margin-top: -4px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(45, 45, 45);
+}
+
+.infobox {
+  /*posamezna "škatla" za predstavitev navbar odstavkov*/
+  flex: 0.18;
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+}
+
+.link1 {
+  /* linki: pokaži več... */
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.title1 {
+  /* Uvod v opice naslov */
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  margin-right: 20%;
+  margin-left: 20%;
+  padding-top: 85px;
+}
+
+.info1 {
+  /*Division za uvod v opice*/
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-column-gap: 100px;
+  grid-row-gap: 35px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 0px;
+  line-height: 150%;
+}
+
+.info9 {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-column-gap: 100px;
+  grid-row-gap: 35px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 100px;
+  margin-top: 80px;
+  line-height: 150%;
+}
+
+/*-----------------------------vrste.html..............................................*/
+
+.title3 {
+  /*vrste opic naslov */
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: rgb(210, 210, 210);
+  font-weight: 300;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 50px;
+}
+
+.title4 {
+  /* Imena opic */
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+}
+
+.title5 {
+  /*pregled*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  margin-left: 20%;
+  margin-top: 90px;
+}
+
+.info3 {
+  /* division za vse opise posameznih opic */
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-column-gap: 200px;
+  grid-row-gap: 35px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 100px;
+  line-height: 150%;
+}
+
+.info2 {
+  /*division za pregled*/
+  display: grid;
+  grid-template-columns: 750px;
+  grid-row-gap: 50px;
+  margin-right: 20%;
+  margin-left: 20%;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  line-height: 150%;
+}
+
+.slika3 {
+  /*slika pajkove opice*/
+  height: 200px;
+  width: auto;
+}
+
+/*-----------------------------informacije.html..............................................*/
+
+.title6 {
+  /*Naslov za spološne informacije o opicah*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
+
+.info4 {
+  /*division za odstavke o splošnih informacijah opic */
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-column-gap: 100px;
+  grid-row-gap: 35px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-left: 20%;
+  margin-bottom: 100px;
+  line-height: 150%;
+}
+
+.kazalo {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -3px;
+  margin-right: 20%;
+  margin-left: 20%;
+  font-size: 19px;
+  color: rgb(226, 206, 175);
+  background-color: rgb(45, 45, 45);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.title11 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  margin-left: 20%;
+  margin-top: 120px;
+}
+
+/*-----------------------------slike.html..............................................*/
+
+.title7 {
+  /*slike opic*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.videi {
+  /*division za celotno zbriko videov opic */
+  margin-top: 50px;
+  margin-left: 13%;
+  margin-right: 13%;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  text-align: center;
+}
+
+.slike {
+  /*division za celotno zbriko slik opic */
+  margin-top: 20px;
+  margin-left: 14%;
+  margin-right: 14%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  text-align: center;
+}
+
+.slike1 {
+  /*Velikost vsake slike v zbirki*/
+  height: 200px;
+  width: auto;
+}
+.slike1:hover {
+  /*Velikost vsake slike v zbirki*/
+  cursor: zoom-in;
+}
+
+.slike1.povečan {
+  height: 800px;
+  width: auto;
+  z-index: 999;
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 16.5%;
+}
+
+.slike1.povečan:hover {
+  cursor: zoom-out;
+}
+
+/*-----------------------------registracija.html..............................................*/
+
+.title8 {
+  /*naslov: registracija*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.registracija {
+  /*division za celotno registracijo */
+  border: 3px solid gray;
+  margin-left: 34%;
+  margin-right: 34%;
+  padding-bottom: 60px;
+  font-family: "Inter";
+  color: rgb(210, 210, 210);
+  background: rgb(32, 33, 36);
+  text-align: center;
+}
+
+.button3 {
+  /*gumb: Postani član */
+  border: none;
+  font-family: "Inter";
+  background-color: rgb(211, 219, 231);
+  font-size: 22px;
+  padding: 8px 13px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.button3:hover {
+  /*gumb: Postani član */
+  cursor: pointer;
+}
+
+.info5 {
+  /*Vsi naslovi nad inputi */
+  font-size: 18px;
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  margin-bottom: 7px;
+  margin-left: 10px;
+}
+
+/*opozorilo da uporabniško ime že obstaja */
+.info7 {
+  font-size: 18px;
+  color: red;
+}
+
+/*-----------------------------prijavljen_registracija.php..............................................*/
+
+/*profil ikona v navbaru */
+.slika4 {
+  height: 35px;
+}
+
+.slika4:hover {
+  cursor: pointer;
+}
+
+/* diviosn za profil ikono (kjer je bil prej division za prijava) */
+.odjava {
+  display: flex;
+  justify-content: center;
+  flex: 0.1;
+  margin-left: 10px;
+}
+
+.profil {
+  /*dropdown seznam ko klikneš na ikono */
+  top: 0;
+  position: fixed;
+  width: 100px;
+  border-right: 3px solid #333;
+  border-left: 3px solid #333;
+  border-bottom: 3px solid #333;
+  margin-top: 65px;
+  margin-left: 88%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-family: "Inter";
+  color: rgb(210, 210, 210);
+  background: rgb(32, 33, 36);
+  display: none;
+}
+
+.profil.odprt1 {
+  /*uporabimo kadar želimo prikazat seznam za odjavo in objavljanje */
+  display: block;
+}
+
+.button4 {
+  /*gumb za odjavo*/
+  border: none;
+  font-family: "Inter";
+  background-color: rgb(211, 219, 231);
+  font-size: 13px;
+  padding: 3px 6px;
+}
+
+.button4:hover {
+  cursor: pointer;
+}
+
+.title9 {
+  /*naslov Uporabnik; */
+  font-size: 14px;
+  font-family: "Inter";
+  color: rgb(210, 210, 210);
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.uporabniki {
+  /*division za ime uporabnika (v primeru če je ime predolgo, da tekst ne ge čez); */
+  width: 100px;
+  word-wrap: break-word;
+}
+.uporabniki:hover {
+  cursor: default;
+}
+
+/*-----------------------------objave.php..............................................*/
+
+.objave {
+  /*division za celotno zbriko objav */
+  margin-top: 30px;
+  margin-left: 17%;
+  margin-right: 13%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+}
+
+/*Naslov objave */
+.title10 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 90px;
+}
+
+/* telo posamezne objave (karte) */
+.karte_telo {
+  width: 250px;
+  margin-bottom: 50px;
+  background-color: rgb(70, 70, 70);
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+
+/* vsebina znotraj telesa objave */
+.karte_vsebina {
+  height: 270px;
+  overflow: hidden;
+}
+
+.karte_naslov {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: rgba(226, 206, 175);
+  font-weight: 500;
+}
+
+/*-----------------------------vpogled.php..............................................*/
+
+.vpogled {
+  /*ustvarjanje objav */
+
+  border: 10px solid #333;
+  margin-top: 100px;
+  margin-left: 17%;
+  margin-right: 17%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 25px;
+  font-size: 16px;
+  font-family: "Inter";
+  color: rgb(210, 210, 210);
+  background: rgb(32, 33, 36);
+}
+
+.button6 {
+  font-family: "Inter";
+  font-size: 14px;
+  border: none;
+  padding-right: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  background-color: rgb(210, 210, 210);
+}
+
+/*-----------------------------objavljanje.php..............................................*/
+
+.objavljanje {
+  /*ustvarjanje objav */
+
+  background: #333;
+  margin-top: 100px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-right: 10px;
+  padding-bottom: 75px;
+}
+
+/*vnos vsebine */
+.objavljanje textarea {
+  resize: none;
+  width: 76%;
+  height: 370px;
+  padding: 10px;
+  font-family: "Inter";
+  font-size: 16px;
+  margin-left: 12%;
+}
+
+.objavljanje button {
+  font-family: "Inter";
+  font-size: 20px;
+  margin-left: 12%;
+  border: none;
+  padding-right: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 15px;
+}
+
+.objavljanje button:hover {
+  cursor: pointer;
+}
+
+.objavljanje h1 {
+  padding-top: 75px;
+  padding-bottom: 10px;
+  margin-left: 12%;
+  font-size: 28px;
+  font-family: "Inter";
+  font-weight: 400;
+  color: rgb(226, 206, 175);
+}
+
+.objavljanje input {
+  margin-left: 12%;
+  font-size: 20px;
+  font-family: "Inter";
+  padding: 7px;
+}
+
+.button5 {
+  font-size: 14px;
+  font-family: "Inter";
+  padding: 6px;
+  border: none;
+  background-color: rgb(211, 219, 231);
+}
+
+.button5:hover {
+  cursor: pointer;
+}
+
+.button3:hover {
+  cursor: pointer;
+}
+
+.info6 {
+  text-align: center;
+}
+
+/*-----------------------------zanimivosti.php..............................................*/
+.info11 {
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-right: 25%;
+  padding-bottom: 150px;
+  font-size: 17px;
+  margin-left: 25%;
+}
+.info11 li {
+  margin-top: 20px;
+}
+
+.title12 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.info12 {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-column-gap: 200px;
+  grid-row-gap: 35px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(210, 210, 210);
+  margin-left: 19%;
+  margin-bottom: 100px;
+  line-height: 150%;
+}
+
+.title13 {
+  /*Naslov za spološne informacije o opicah*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  color: rgb(226, 206, 175);
+  font-weight: 300;
+  text-align: center;
+  padding-top: 70px;
+  margin-bottom: 40px;
+}

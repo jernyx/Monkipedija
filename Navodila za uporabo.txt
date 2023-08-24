@@ -1,0 +1,10 @@
+Priporočen brskalnik: Google Chrome
+Priporočen ekran: 24 inch 1920 x 1080p oz. horizontalna rezolucija večja od 1400p
+
+Namestitev: 
+1.) Naloži XAMPP (vključno z MySQL in Apache, priporočena verzija 8.2.4)
+2.) Zaženi XAMPP Control Panel, nato zaženi Apache in MySQL
+3.) Dodaj Monkipedija datoteko v xampp\htdocs 
+4.) http://localhost/phpmyadmin/ in ustvari podatkovno bazo z imenom: podatkovna_baza
+5.) Klikni Uvozi in izberi datoteko "podatkovna_baza.sql"
+6.) http://localhost in navigeraš do datoteke "strani"
