@@ -1,5 +1,5 @@
 Priporočen brskalnik: Google Chrome
-Priporočen ekran: 24 inch 1920 x 1080p oz. horizontalna rezolucija večja od 1400p
+Priporočen ekran: 24 inch 1920 x 1080p oz. horizontalna dimenzija večja od 1400p
 
 Namestitev: 
 1.) Naloži XAMPP (vključno z MySQL in Apache, priporočena verzija 8.2.4)
